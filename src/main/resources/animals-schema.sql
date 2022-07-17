@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS `animals` CASCADE;
+CREATE TABLE `animals` (
+    `id` INTEGER UNIQUE PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(255) NOT NULL,
+    `animalGroup` VARCHAR(255) NOT NULL,
+    `population` INTEGER NOT NULL,
+    `diet` VARCHAR(255) NOT NULL,
+    `lifespan` INTEGER NOT NULL
+);
