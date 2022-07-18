@@ -48,20 +48,20 @@ public class AnimalsControllerIntegrationTest {
 		String createdAnimalAsJSON = this.mapper.writeValueAsString(createdAnimal);
 		ResultMatcher checkBody = content().json(createdAnimalAsJSON);
 
-		this.mvc.perform(req).andExpect(checkStatus).andExpect(checkBody);
+ 		this.mvc.perform(req).andExpect(checkStatus).andExpect(checkBody);
 	}
 
 	@Test
 	void testRead() throws Exception {
 		List<Animals> animal = List.of(new Animals(1, "Lion", "Mammal", 20000, "Carnivore", 13));
-		this.mvc.perform(get("/getAnimal")).andExpect(status().isOk())
+		this.mvc.perform(get("/getAnimals")).andExpect(status().isOk())
 				.andExpect(content().json(this.mapper.writeValueAsString(animal)));
 	}
-
+s
 	@Test
 	void testUpdate() throws Exception {
-		Animals updated = new Animals(1, "Cheetah", "Mammal", 7100, "Carnivor", 12);
-		this.mvc.perform(patch("/updateDino/1?name=Cheetah&animalGroup=Mammal&population=7100&diet=Carnivore&lifespan=12")).andExpect(status().isOk())
+		Animals updated = new Animals(1, "Cheetah", "Mammal", 7100, "Carnivore", 12);
+		this.mvc.perform(patch("/updateAnimal/1?name=Cheetah&animalGroup=Mammal&population=7100&diet=Carnivore&lifespan=12")).andExpect(status().isOk())
 				.andExpect(content().json(this.mapper.writeValueAsString(updated)));
 	}
 

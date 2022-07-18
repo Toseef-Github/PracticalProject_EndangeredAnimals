@@ -26,10 +26,7 @@ public class AnimalsController {
 	@Autowired
 	private AnimalsService service; // dependency
 
-	@GetMapping("/demo")
-	public String helloworld() {
-		return "Hello";
-	}
+
 	@GetMapping("/getAnimal/{id}")
 	public Animals getById(@PathVariable int id) {
 		return this.service.getById(id);

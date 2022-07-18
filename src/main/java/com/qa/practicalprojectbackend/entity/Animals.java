@@ -17,12 +17,12 @@ public class Animals {
 		@GeneratedValue(strategy = GenerationType.IDENTITY) // AI
 		private Integer id;
 
-		@Column(name = "animalName", nullable = false, unique = true)
+		@Column(name = "Name", nullable = false, unique = true)
 		private String name;
-
-		private String group;
+		@Column(name = "animalgroup")
+		private String animalGroup;
 		
-		private String population;
+		private int population;
 		
 		private String diet;
 
@@ -35,21 +35,21 @@ public class Animals {
 		}
 
 
-		public Animals(Integer id, String name, String group, String population, String diet, int lifespan) {
+		public Animals(Integer id, String name, String animalGroup, int population, String diet, int lifespan) {
 			super();
 			this.id = id;
 			this.name = name;
-			this.group = group;
+			this.animalGroup = animalGroup;
 			this.population = population;
 			this.diet = diet;
 			this.lifespan = lifespan;
 		}
 
 
-		public Animals(String name, String group, String population, String diet, int lifespan) {
+		public Animals(String name, String animalGroup, int population, String diet, int lifespan) {
 			super();
 			this.name = name;
-			this.group = group;
+			this.animalGroup = animalGroup;
 			this.population = population;
 			this.diet = diet;
 			this.lifespan = lifespan;
@@ -76,22 +76,22 @@ public class Animals {
 		}
 
 
-		public String getGroup() {
-			return group;
+		public String getAnimalGroup() {
+			return animalGroup;
 		}
 
 
-		public void setGroup(String group) {
-			this.group = group;
+		public void setGroup(String animalGroup) {
+			this.animalGroup = animalGroup;
 		}
 
 
-		public String getPopulation() {
+		public int getPopulation() {
 			return population;
 		}
 
 
-		public void setPopulation(String population) {
+		public void setPopulation(int population) {
 			this.population = population;
 		}
 
@@ -118,7 +118,7 @@ public class Animals {
 
 		@Override
 		public int hashCode() {
-			return Objects.hash(diet, group, id, lifespan, name, population);
+			return Objects.hash(diet, animalGroup, id, lifespan, name, population);
 		}
 
 
@@ -131,7 +131,7 @@ public class Animals {
 			if (getClass() != obj.getClass())
 				return false;
 			Animals other = (Animals) obj;
-			return Objects.equals(diet, other.diet) && Objects.equals(group, other.group)
+			return Objects.equals(diet, other.diet) && Objects.equals(animalGroup, other.animalGroup)
 					&& Objects.equals(id, other.id) && lifespan == other.lifespan && Objects.equals(name, other.name)
 					&& Objects.equals(population, other.population);
 		}
@@ -139,7 +139,7 @@ public class Animals {
 
 		@Override
 		public String toString() {
-			return "Animals name = " + name + ", group = " + group + ", population = " + population + ", diet = " + diet
+			return "Animals name = " + name + ", Animal group = " + animalGroup + ", population = " + population + ", diet = " + diet
 					+ ", lifespan = " + lifespan;
 		}
 		
