@@ -10,7 +10,7 @@ import com.qa.practicalprojectbackend.rest.AnimalsController;
 public class PracticalProjectBackendApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext context = SpringApplication.run(PracticalProjectBackendApplication.class, args);
-		System.out.println("Found the bean: " + context.getBean(AnimalsController.class));
+		 SpringApplication.run(PracticalProjectBackendApplication.class, args);
+		
 	}
 }
