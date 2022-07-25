@@ -116,25 +116,25 @@ public class Animals {
 		}
 
 
-		@Override
-		public int hashCode() {
-			return Objects.hash(diet, animalGroup, id, lifespan, name, population);
-		}
-
-
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			Animals other = (Animals) obj;
-			return Objects.equals(diet, other.diet) && Objects.equals(animalGroup, other.animalGroup)
-					&& Objects.equals(id, other.id) && lifespan == other.lifespan && Objects.equals(name, other.name)
-					&& Objects.equals(population, other.population);
-		}
+//		@Override
+//		public int hashCode() {
+//			return Objects.hash(diet, animalGroup, id, lifespan, name, population);
+//		}
+//
+//
+//		@Override
+//		public boolean equals(Object obj) {
+//			if (this == obj)
+//				return true;
+//			if (obj == null)
+//				return false;
+//			if (getClass() != obj.getClass())
+//				return false;
+//			Animals other = (Animals) obj;
+//			return Objects.equals(diet, other.diet) && Objects.equals(animalGroup, other.animalGroup)
+//					&& Objects.equals(id, other.id) && lifespan == other.lifespan && Objects.equals(name, other.name)
+//					&& Objects.equals(population, other.population);
+//		}
 
 
 		@Override
