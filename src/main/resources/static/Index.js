@@ -1,6 +1,6 @@
 'use strict';
 
-const output = document.getElementById('output');
+// const output = document.getElementById('output');
 
 document.getElementById('animalsForm').addEventListener("submit", function (event) {
     event.preventDefault();
@@ -28,6 +28,8 @@ document.getElementById('animalsForm').addEventListener("submit", function (even
     console.log("animal: ", animal);
 });
 
+const output = document.getElementById('output');
+
 function renderAnimals() {
     axios.get("http://localhost:8080/getAnimals")
         .then(res => {
@@ -35,7 +37,7 @@ function renderAnimals() {
             output.innerHTML = "";
             for (let animal of res.data) {
                 const animalCol = document.createElement("div");
-                animalCol.className = "col";
+                animalCol.className = "col-4";
 
                 const animalCard = document.createElement("div");
                 animalCard.className = "card";
@@ -59,16 +61,29 @@ function renderAnimals() {
 
                 const animalGroup = document.createElement("p");
                 animalGroup.innerText = "Group = " + animal.animalGroup;
-                animalGroup.classList.add("btn", "btn-alert");
                 animalDiv.appendChild(animalGroup);
 
                 const animalDiet = document.createElement("p");
                 animalDiet.innerText = "Diet = " + animal.diet;
                 animalDiv.appendChild(animalDiet);
 
+                const animalUpdate = document.createElement('button');
+                animalUpdate.innerText = "Update";
+                animalUpdate.classList.add("btn", "btn-secondary");
+                animalUpdate.addEventListener("click", () => {
+                    console.log();
+                    updateAnimal(animal.id);
+                });
+
+                animalDiv.appendChild(animalUpdate);
+
+                output.appendChild(animalCol);
+
                 const animalDelete = document.createElement("button");
-                animalDelete.innerText = "Remove";
-                animalDelete.addEventListener("click", function () {
+                animalDelete.innerText = "Delete";
+                animalDelete.classList.add("btn", "btn-danger");
+                animalDelete.addEventListener("click", () => {
+                    alert("Animal deleted successfully");
                     deleteAnimal(animal.id);
                 });
 
@@ -79,6 +94,22 @@ function renderAnimals() {
         })
         .catch(err => console.error(err));
 }
+
+function updateAnimal(id) {
+    const updateName = document.getElementById("name").value
+    const updatePopulation = document.getElementById("population").value
+    const updateLifespan = document.getElementById("lifespan").value
+    const updateAnimalGroup = document.getElementById("animalGroup").value
+    const updateDiet = document.getElementById("diet").value
+    
+    axios.patch(`http://localhost:8080/updateAnimal/${id}?name=${updateName}&population=${updatePopulation}&lifespan=${updateLifespan}&animalGroup=${updateAnimalGroup}&diet=${updateDiet}`)
+    
+            .then(res => {
+                console.log("RESPONSE: ", res);
+                renderAnimals();
+            }).catch(err => console.error(err));
+        }
+
 
 function deleteAnimal(id) {
     axios.delete("http://localhost:8080/removeAnimal/" + id)
