@@ -53,7 +53,7 @@ public class AnimalsServiceDB implements AnimalsService {
 	}
 
 	@Override
-	public Animals findByName(String name) {
+	public List<Animals> findByName(String name) {
 		// TODO Auto-generated method stub
 		return this.repo.findByNameStartingWithIgnoreCase(name);
 	}

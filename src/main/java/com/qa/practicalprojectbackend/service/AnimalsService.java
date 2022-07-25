@@ -10,7 +10,7 @@ public interface AnimalsService {
 
 	List<Animals> getAll();
 
-	Animals findByName(String name);
+	List<Animals> findByName(String name);
 
 	Animals create(Animals animal);
 

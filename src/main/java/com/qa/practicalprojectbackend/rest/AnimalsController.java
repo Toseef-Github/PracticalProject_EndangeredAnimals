@@ -38,7 +38,7 @@ public class AnimalsController {
 	}
 
 	@GetMapping("/getAnimalByName/{name}")
-	public Animals getAnimalByName(@PathVariable String name) {
+	public List<Animals> getAnimalByName(@PathVariable String name) {
 		return this.service.findByName(name);
 	}
 

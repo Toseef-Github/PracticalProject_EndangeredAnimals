@@ -7,6 +7,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -57,7 +58,22 @@ public class AnimalsControllerIntegrationTest {
 		this.mvc.perform(get("/getAnimals")).andExpect(status().isOk())
 				.andExpect(content().json(this.mapper.writeValueAsString(animal)));
 	}
-s
+	
+	@Test
+    void testReadById() throws Exception {
+        Animals animal = new Animals(1, "Lion", "Mammal", 20000, "Carnivore", 13);
+        this.mvc.perform(get("/getAnimal/1")).andExpect(status().isOk())
+            .andExpect(content().json(this.mapper.writeValueAsString(animal)));
+    }
+	
+    @Test
+    void testReadByName() throws Exception {
+    		List<Animals> testAnimalName = new ArrayList <Animals>();
+            testAnimalName.add(new Animals(1, "Lion", "Mammal", 20000, "Carnivore", 13));
+            this.mvc.perform(get("/getAnimalByName/Lion")).andExpect(status().isOk())
+            .andExpect(content().json(this.mapper.writeValueAsString(testAnimalName)));
+        }
+
 	@Test
 	void testUpdate() throws Exception {
 		Animals updated = new Animals(1, "Cheetah", "Mammal", 7100, "Carnivore", 12);
