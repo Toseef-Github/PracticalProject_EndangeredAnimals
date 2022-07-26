@@ -77,7 +77,7 @@ document.getElementById('animalsSearch').addEventListener("submit", function (ev
                 animalDiet.innerText = "Diet = " + animal.diet;
                 animalDiv.appendChild(animalDiet);
 
-                output.appendChild(animalCol);
+                output.prepend(animalCol);
             }
         })
         .catch(err => console.error(err));
@@ -127,7 +127,7 @@ function renderAnimals() {
 
                 const animalUpdate = document.createElement('button');
                 animalUpdate.innerText = "Update";
-                animalUpdate.classList.add("btn", "btn-secondary");
+                animalUpdate.classList.add("btn", "btn-secondary", "m-2");
                 animalUpdate.addEventListener("click", () => {
                     if (confirm('Are you sure?')) {
                             console.log(updateAnimal(animal.id));
