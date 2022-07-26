@@ -53,6 +53,18 @@ public class AnimalsController {
 	@PatchMapping("/updateAnimal/{id}")
 	public Animals update(@PathVariable("id") int id, @PathParam("name") String name,
 			@PathParam("animalGroup") String animalGroup, @PathParam("population") Integer population, @PathParam("diet") String diet, @PathParam("lifespan") Integer lifespan) {
+		Animals existing = getById(id);
+		if (existing != null) {
+			if ("".equals(name)) {
+				name = existing.getName();
+			}
+			if ("".equals(diet)) {
+				diet = existing.getDiet();
+			}
+			if ("".equals(animalGroup)) {
+				animalGroup = existing.getAnimalGroup();
+			}
+		}
 		return this.service.update(id, name, animalGroup, population, diet, lifespan);
 	}
 
