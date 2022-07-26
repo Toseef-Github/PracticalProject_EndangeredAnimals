@@ -71,9 +71,19 @@ function renderAnimals() {
                 animalUpdate.innerText = "Update";
                 animalUpdate.classList.add("btn", "btn-secondary");
                 animalUpdate.addEventListener("click", () => {
-                    console.log();
-                    updateAnimal(animal.id);
+                    if (confirm('Are you sure?')) {
+                        txt = console.log(updateAnimal(animal.id));
+                    } else {
+                    txt = "You pressed cancel";
+                    }
                 });
+                
+                
+                
+                // addEventListener("click", () => {
+                //     console.log();
+                //     updateAnimal(animal.id);
+                // });
 
                 animalDiv.appendChild(animalUpdate);
 
@@ -83,8 +93,12 @@ function renderAnimals() {
                 animalDelete.innerText = "Delete";
                 animalDelete.classList.add("btn", "btn-danger");
                 animalDelete.addEventListener("click", () => {
-                    alert("Animal deleted successfully");
-                    deleteAnimal(animal.id);
+
+                    if (confirm('Are you sure?')) {
+                        txt = console.log(deleteAnimal(animal.id));
+                    } else {
+                    txt = "You pressed cancel";
+                    }
                 });
 
                 animalDiv.appendChild(animalDelete);
