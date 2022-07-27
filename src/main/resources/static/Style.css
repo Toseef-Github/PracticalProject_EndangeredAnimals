@@ -1,5 +1,5 @@
 h1 {
-    color: darkblue;
+    color: darkgreen;
     font-style: oblique;
     font-family:fantasy;
     font-style: bold;
@@ -7,20 +7,36 @@ h1 {
 
 h2 {
     font-family: fantasy;
+    color: darkgreen;
 }
 
 form {
-    color: darkblue;
+    color: darkgreen;
 }
 
 .row {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin: 5;
+    padding: 5;
     overflow: hidden;
-    background-color: #acd5cf;
+    background-color: #42d86088;
     width: 100%;
-    /* updates */
-    position: sticky;
+    position:relative;
     top: 0;
+}
+
+.header {
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    background-image:url(BorderOne.jpg);
+
+    background-position: center;
+
+    background-size:cover;
+
+    position: relative;
+
 }
