@@ -1,0 +1,26 @@
+h1 {
+    color: darkblue;
+    font-style: oblique;
+    font-family:fantasy;
+    font-style: bold;
+}
+
+h2 {
+    font-family: fantasy;
+}
+
+form {
+    color: darkblue;
+}
+
+.row {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #acd5cf;
+    width: 100%;
+    /* updates */
+    position: sticky;
+    top: 0;
+}

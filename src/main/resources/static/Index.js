@@ -47,10 +47,11 @@ document.getElementById('animalsSearch').addEventListener("submit", function (ev
             for (let animal of res.data) {
                 const animalCol = document.createElement("div");
                 animalCol.id = "searchAnimalsDiv";
-                animalCol.className = "col-4";
+                animalCol.className = "col-12";
 
                 const animalCard = document.createElement("div");
                 animalCard.className = "card";
+                animalCard.style.textAlign="center";
                 animalCol.appendChild(animalCard);
 
                 const animalDiv = document.createElement("div");
@@ -99,6 +100,7 @@ function renderAnimals() {
 
                 const animalCard = document.createElement("div");
                 animalCard.className = "card";
+                animalCard.style.textAlign="center";
                 animalCol.appendChild(animalCard);
 
                 const animalDiv = document.createElement("div");
