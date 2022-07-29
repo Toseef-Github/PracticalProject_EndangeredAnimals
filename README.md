@@ -1,4 +1,4 @@
-Coverage 96.1%
+Coverage 95.8%
 
 # Practical Project - Endangered Animals
 
