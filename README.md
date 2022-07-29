@@ -40,13 +40,13 @@ Prerequisites for the project:
 ## Installing Postman
 Download Postman from this link - https://www.postman.com/downloads/
 
-INSERT IMAGE***********
+![image](https://user-images.githubusercontent.com/105277444/181766013-a57eaf12-0c95-4750-8283-22bfc0b32e1a.png)
 
 Postman-Download
 
 Open the link and run Postman and you should see the following output:
 
-INSERT IMAGE***********
+![image](https://user-images.githubusercontent.com/105277444/181766064-ec2e1f55-cd52-4512-be02-23a2754aed56.png)
 
 
 ## Deploying Practical Project 
@@ -65,7 +65,8 @@ INSERT IMAGE **************
 
 You can check if the database is holding the data correctly by opening the table in MySQL. 
 
-INSERT IMAGE **************
+MySQL_animaltable.png
+***********
 
 
 ## Running Tests
