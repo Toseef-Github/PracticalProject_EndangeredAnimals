@@ -51,32 +51,25 @@ Open the link and run Postman and you should see the following output:
 
 ## Deploying Practical Project 
 
-Once you have cloned the repository to your local device, open eclipse on your device and select; "File: > "Open projects from file system" > select the folder cloned "PracticalProject".
+- Once you have cloned the repository to your local device, open eclipse on your device and select; "File: > "Open projects from file system" > select the folder cloned "PracticalProject".
 
-Once opened, change the application-prod.properties from validate to create (Please note you will need to edit the url, username and password accordingly). Next, run the project as spring-boot project and upon completion change it back to validate.
+- Once opened, change the application-prod.properties from validate to create (Please note you will need to edit the url, username and password accordingly). Next, run the project as spring-boot project and upon completion change it back to validate.
 
-You must also connect the MySQL local instance by selecting "connect database". 
+- You must also connect the MySQL local instance by selecting "connect database". 
 
-The front-end can be opened in Visual Studio Code by using the live server plugin.
+- The front-end can be opened in Visual Studio Code by using the live server plugin.
 
-The front-end should be up and running allowing you full CRUD functionality. 
+- The front-end should be up and running allowing you full CRUD functionality. 
 
-INSERT IMAGE **************
-
-You can check if the database is holding the data correctly by opening the table in MySQL. 
-
-MySQL_animaltable.png
-***********
+- You can check if the database is holding the data correctly by opening the table in MySQL. 
 
 
 ## Running Tests
 
 The testing is carried out via JUnit and MockMVC. This covers the functionality of the API. To run the test just simply right click on the project and select coverage as JUnit test.
 
-INSERT IMAGE ***************
-
 ## Continued Development:
-- Separate page for the search function has been created with working search functionality. This can be implemented	 via a navigation bar. 
+- Separate page for the search function has been created with working search functionality. This can be implemented via a navigation bar. 
 
 - Add a second entity such as charitable organisations for endangered animals as shown in the draft ERD. 
 
@@ -89,11 +82,21 @@ Spring - Backend Application
 
 ## Versioning 
 
-GitHub was used for versioning.
+GitHub was used for versioning - http://github.com/
 
 ## Authors
 
 - Toseef Mehdi 
+
+## Licence 
+
+This project is licensed under the MIT license - see the LICENSE.md file for details
+
+##Acknowledgments 
+
+Thank you to all the QA trainers who helped me during the few weeks of training!
+
+## JIRA - https://toseef.atlassian.net/jira
 
 
 
