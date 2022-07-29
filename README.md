@@ -92,7 +92,7 @@ GitHub was used for versioning - http://github.com/
 
 This project is licensed under the MIT license - see the LICENSE.md file for details
 
-##Acknowledgments 
+## Acknowledgments 
 
 Thank you to all the QA trainers who helped me during the few weeks of training!
 
